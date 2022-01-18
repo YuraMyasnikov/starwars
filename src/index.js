@@ -48,7 +48,7 @@ class StarWarsService {
     const people = new StarWarsService()
     people.getAllPeople()
         .then(people=>{
-            console.log(`Типы ${people}`);
+            console.log(people);
         })
     people.getPeople(3).then(people=>{
         console.log(`тип -  ${people.name}`)
@@ -64,7 +64,7 @@ class StarWarsService {
 
     const starships = new StarWarsService()
     starships.getAllStarships().then(starships=>{
-        console.log(`корабли ${starships}`)
+        console.log(starships)
     })
     starships.getStarship(1).then(starships=>{
         console.log(`корабль ${starships.name}`)
