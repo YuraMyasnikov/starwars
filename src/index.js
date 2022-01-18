@@ -1,17 +1,73 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class StarWarsService {
+
+    _baseUrl = 'https://swapi.dev/api/'
+
+    async getResurse (url) {
+        const response = await fetch(`${this._baseUrl}${url}`)
+        const body = await response.json()
+
+        if(!response.ok){
+            throw new Error(`!!! ${response.url} - ${response.status}`)
+        }
+
+        return body
+    }
+
+    async getAllPeople (){
+       const people = await this.getResurse('people/')
+        return people.results
+    }
+    async getPeople (id){
+        const people = await this.getResurse(`people/${id}`)
+        return people
+    }
+
+    async getAllPlanets (){
+        const people = await this.getResurse('planets/')
+        return people.results
+    }
+    async getPlanet (id){
+        const planets = await this.getResurse(`planets/${id}`)
+        return planets
+    }
+
+    async getAllStarships (){
+        const people = await this.getResurse('starships/')
+        return people.results
+    }
+    async getStarship (id){
+        const starships = await this.getResurse(`starships/${id}`)
+        return starships
+    }
+}
+
+    const people = new StarWarsService()
+    people.getAllPeople()
+        .then(people=>{
+            console.log(`Типы ${people}`);
+        })
+    people.getPeople(3).then(people=>{
+        console.log(`тип -  ${people.name}`)
+    })
+
+    const planets = new StarWarsService()
+    planets.getAllPlanets().then(planets=>{
+        console.log(planets)
+    })
+    planets.getPlanet(6).then(planet=>{
+        console.log(`планета ${planet.name}`)
+    })
+
+    const starships = new StarWarsService()
+    starships.getAllStarships().then(starships=>{
+        console.log(`корабли ${starships}`)
+    })
+    starships.getStarship(1).then(starships=>{
+        console.log(`корабль ${starships.name}`)
+    })
+
+
