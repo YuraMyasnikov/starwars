@@ -1,0 +1,20 @@
+.random-planet{
+    display: flex;
+    border: 1px solid yellow;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.img-box{
+    border: 2px solid red;
+}
+.img-planet{
+    width: 200px;
+    border-radius: 5%;
+}
+
+.info-box{
+    position: relative;
+    border: 2px solid blue;
+}
