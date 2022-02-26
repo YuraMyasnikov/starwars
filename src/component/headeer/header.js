@@ -4,8 +4,13 @@ import './header.css'
 const Header = () => {
 
     return(
-        <div>
-            header
+        <div className="Header">
+            <h1>SWApi</h1>
+            <ul>
+                <li>Герои</li>
+                <li>Планеты</li>
+                <li>Карабли</li>
+            </ul>
         </div>
     )
 

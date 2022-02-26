@@ -12,23 +12,23 @@ import Starship from "../starship-details";
 const App = () => {
 
     return(
-        <div className="p-1 w-100 m-auto" >
+        <div className="App" >
 
-            <div className="justify-content-center w-75 align-content-center m-auto">
+            <div className="AppHeader">
                 <Header/>
             </div>
 
-            <div className="col-12 w-100">
+            <div className="AppRandom">
                 <RandomPlanet/>
             </div>
 
-            <div className="col-12 justify-content-center d-flex flex-row">
+            <div className="d-flex">
 
-                <div className="col-sm-12 col-md-6 d-flex">
+                <div className="col-sm-12 col-md-5 d-flex">
                     <ItemList/>
                 </div>
 
-                <div className="col-sm-12 col-md-6 d-flex">
+                <div className="col-sm-12 col-md-7 d-flex">
                     <Person/>
                     <Planet/>
                     <Starship/>
