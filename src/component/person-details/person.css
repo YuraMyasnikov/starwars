@@ -1,0 +1,20 @@
+.personDetails{
+    margin-left: 5px;
+    background-color: #121314;
+    border-radius: 10px;
+    width: 100%;
+}
+.personDetails img{
+    width: 230px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.personDetails ul{
+    margin: 10px;
+}
+.personDetails ul li{
+    margin-bottom: 5px;
+    transition: ease .3s;
+    padding: 5px;
+}

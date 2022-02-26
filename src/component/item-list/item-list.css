@@ -1,0 +1,17 @@
+.itemList{
+    background-color: #121314;
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px 25px;
+    margin-right: 5px;
+}
+.itemList .item{
+    margin-bottom: 5px;
+    transition: ease .3s;
+    padding: 5px;
+}
+.itemList .item:hover{
+    background: #5b556847;
+    transition: ease .3s;
+    border-radius: 5px;
+}

@@ -1,20 +1,35 @@
 .random-planet{
     display: flex;
-    border: 1px solid yellow;
-    justify-content: space-between;
-    width: 100%;
-    border-radius: 25px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #121314;
+    justify-content: center;
 }
 
-.img-box{
-    border: 2px solid red;
+.random-planet .planet{
+    min-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
-.img-planet{
-    width: 200px;
-    border-radius: 5%;
+.random-planet .planet img{
+     border-radius: 10px;
+     width: 80%;
+ }
+.random-planet .info{
+    min-width: 60%;
 }
-
-.info-box{
-    position: relative;
-    border: 2px solid blue;
+.random-planet .info .name{
+    text-align: center;
+    margin: 5px 0 10px;
+}
+.random-planet .info ul{
+    padding-top: 10px;
+}
+.random-planet .info ul li{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #91919126;
+    width: 35%;
 }

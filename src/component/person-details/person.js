@@ -7,7 +7,7 @@ class Person extends Component{
 
     state = {
         name:null,
-        male:null,
+        gender:null,
         height:null,
         eyeColor:null,
         birthYear:null,
@@ -16,13 +16,14 @@ class Person extends Component{
 
     updatePerson = ()=>{
         const starwars = new StarWarsService()
-        const id = 1
+        const id = 5
         starwars.getPeople(id).then( (person)=>{
             this.setState({
                 name: person.name,
+                gender: person.gender,
                 height: person.height,
-                eyeColor:person.eyeColor,
-                birthYear:person.birthYear,
+                eyeColor:person.eye_color,
+                birthYear:person.birth_year,
                 id:id
             })
         } )
@@ -34,22 +35,31 @@ class Person extends Component{
     }
 
     render() {
-        const {name, male, height, eyeColor, birthYear, id} = this.state
+        const {name, gender, height, eyeColor, birthYear, id} = this.state
         return(
-            <div>
-                Имя = {name}
-                -
-                пол - {male}
-                -
-                высота - {height}
-                -
-                цвет глаз - {eyeColor}
-                -
-                возрост - {birthYear}
-                -
-                {id}
-
-                <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt=""/>
+            <div className="personDetails">
+                <div className="row">
+                    <div className="d-flex">
+                        <img src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt=""/>
+                        <h3 className="d-flex w-100 align-items-center justify-content-center">{name}</h3>
+                    </div>
+                </div>
+                <div className="row">
+                <ul>
+                    <li>
+                        пол - {gender}
+                    </li>
+                    <li>
+                        высота - {height}
+                    </li>
+                    <li>
+                        цвет глаз - {eyeColor}
+                    </li>
+                    <li>
+                        возрост - {birthYear}
+                    </li>
+                </ul>
+                </div>
             </div>
         )
 

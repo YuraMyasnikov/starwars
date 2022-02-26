@@ -36,7 +36,6 @@ export default class StarWarsService {
     }
     async getPlanet (id){
         const planet = await this.getResurse(`planets/${id}/`)
-        console.log(planet)
         return this._tranceformePlanet(planet)
     }
 
